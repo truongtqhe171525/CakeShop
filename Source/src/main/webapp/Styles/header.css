@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root{
+    --header-background-color: #f4f5f5;
+    --header-text-color: #333333;
+    --header-height: 5rem;
+}
+
+.header {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: var(--header-background-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.header-icon {
+    text-align: center;
+    font-family: "Kaushan Script", cursive;
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    margin: 0;
+    color: #ff8c00;
+}
+
+.header-navbar {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.header-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.header-navbar li {
+    text-align: center;
+    position: relative;
+    padding: 0.3rem;
+}
+
+.header-navbar li a {
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-weight: 600;
+}
+
+.header-navbar li:not(.header-target)::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0.15rem;
+    background: var(--header-text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.header-navbar li:hover:after {
+    width: 100%;
+}
+
+.header-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-cart{
+    margin-right: 2rem;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    color: var(--header-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
+}
+
+.header-btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    background-color: transparent;
+    border: none;
+    svg{
+        margin-right: 0.5rem;
+    }
+}
+
+.header-target a{
+    color: #ff8c00;
+}
+
+.header-target::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.15rem;
+    background: #ff8c00;
+}

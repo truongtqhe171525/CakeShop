@@ -1,0 +1,165 @@
+:root {
+    --size-target-color: #ff9900;
+    --size-untarget-color: #c9c9c9;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.list-cake {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cake-card {
+    width: 100%;
+    height: calc((80vw - 5 * 2rem) / 4 * 1.5);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.cake-image {
+    width: 100%;
+    height: 60%;
+}
+
+.card-content {
+    margin: 0.5rem;
+}
+
+.cake-name{
+    font-size: clamp(0.7rem, 3.5vw, 1rem);
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.list-cake-size {
+    margin: 0.5rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.list-cake-size li {
+    width: fit-content;
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    color: white;
+}
+
+.cake-old-price {
+    text-decoration: line-through;
+}
+
+.size-target {
+    background-color: var(--size-target-color);
+}
+
+.more-infor {
+    width: fit-content;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    color: #626262;
+    transition: all 0.3s ease-in-out;
+}
+
+.more-infor:hover {
+    color: #ff9900;
+}
+
+.load-more{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem 1.5rem;
+    margin: 3rem 0;
+    font-size: clamp(1rem, 5vw, 1.4rem);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #c5c5c5;
+    background-color: #f4f5f5;
+    transition: all 0.2s ease-in-out;
+}
+.load-more:hover{
+    box-shadow: 0 0.2rem 0.5rem #725e46;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-animation {
+    animation: animationCard 1s ease-in-out;
+}
+
+@keyframes animationCard {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 575px) {
+    .list-cake {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cake-card {
+        height: calc((80vw - 2 * 2rem) * 1.5);
+    }
+}
+
+@media (min-width: 575px) {
+    .list-cake {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cake-card {
+        height: calc((80vw - 3 * 2rem) / 2 * 1.5);
+    }
+}
+
+@media (min-width: 900px) {
+    .list-cake {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cake-card {
+        height: calc((80vw - 4 * 2rem) / 3 * 1.5);
+    }
+}
+
+@media (min-width: 1200px) {
+    .list-cake {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .cake-card {
+        height: calc((80vw - 5 * 2rem) / 4 * 1.5);
+    }
+}

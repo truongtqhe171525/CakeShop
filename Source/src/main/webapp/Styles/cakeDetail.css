@@ -1,0 +1,273 @@
+:root {
+    --size-target-color: #ff9900;
+    --size-untarget-color: #c9c9c9;
+    --size-btn-quantity: 1.5rem;
+}
+
+.cake-detail-container {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 0.5rem #656565;
+}
+
+.cake-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    p{
+        margin: 0 0 0.2rem 0;
+    }
+}
+
+.cake-name {
+    margin: 0 0 1rem 0;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.cake-description {
+    white-space: break-spaces;
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+    font-weight: 500;
+}
+
+.detail-group:not(:last-child){
+    border-bottom: 0.05rem dashed #b9b9b9;
+}
+.detail-group{
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+}
+
+.list-cake-size {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.list-cake-size li {
+    width: fit-content;
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    color: white;
+}
+
+.cake-old-price {
+    text-decoration: line-through;
+}
+
+.size-target {
+    background-color: var(--size-target-color);
+}
+
+.quantity-input {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #ff9100;
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
+
+.quantity-input button{
+    width: var(--size-btn-quantity);
+    height: var(--size-btn-quantity);
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(0.8rem, 3.5vw, 1.1rem);
+    transition: all 0.25s ease-in-out;
+    color: white;
+}
+
+.quantity-input button:hover{
+    background-color: rgba(98, 98, 98, 0.1);
+}
+
+.quantity-input input {
+    width: calc(var(--size-btn-quantity) * 2);
+    height: var(--size-btn-quantity);
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    color: white;
+    font-size: clamp(0.8rem, 3.5vw, 1.1rem);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.btn-order{
+    padding: 0.5rem 1.5rem;
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+    background-color: #ff8c00;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    font-weight: 600;
+    color: white;
+    margin: 1rem 0 0 0;
+    border-radius: 0.5rem;
+    &:hover{
+        background: #ff9900;
+    }
+}
+
+.order-form-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: rgba(80, 80, 80, 0.5);
+}
+
+.form-outline{
+    width: 40%;
+    height: fit-content;
+    min-height: 50%;
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.order-form{
+    width: 100%;
+    height: 100%;
+    h1{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.btn-close-order{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff9900;
+    color: white;
+    font-size: clamp(0.8rem, 3.5vw, 1.2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-group{
+    width: 100%;
+    margin: 1rem 0;
+    p{
+        float: left;
+        margin: 0 0 0.2rem 0;
+    }
+    input{
+        width: 100%;
+        padding: 0.5rem;
+        outline: none;
+        border: none;
+        background-color: #fff6ed;
+    }
+    textarea{
+        width: 100%;
+        min-height: 5rem;
+        resize: none;
+        padding: 0.5rem;
+        outline: none;
+        border: none;
+        background-color: #fff6ed;
+    }
+    button{
+        padding: 0.5rem 1.5rem;
+        font-size: clamp(0.8rem, 3.5vw, 1rem);
+        background-color: #ff8c00;
+        border: none;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+        font-weight: 600;
+        color: white;
+        margin: 1rem auto 0 auto;
+        border-radius: 0.5rem;
+        &:hover{
+            background: #ff6a00;
+        }
+    }
+    i{
+        font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+        color: #fa5454;
+    }
+}
+
+@media (max-width: 600px) {
+    .cake-detail-container {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 600px) {
+    .cake-detail-container {
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .cake-detail-container {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .cake-detail-container {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .cake-detail-container {
+        width: 60%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
